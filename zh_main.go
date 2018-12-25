@@ -6,6 +6,8 @@
 	"fmt"
 	"io/ioutil"
 	"log"
+	"os"
+	"bufio"
 )
 
 程序 主要() {
@@ -64,14 +66,11 @@
 程序 加起来线一个文件(名字 字符串) 整数 {
 
 	// 复制了从 https://stackoverflow.com/questions/24562942/golang-how-do-i-determine-the-number-of-lines-in-a-file-efficiently
-
-
-	文件bytes, 错 := ioutil.ReadFile(名字)
-	如果 错 != nil {
-		log.Fatal(错)
+	文件, _ := os.Open(名字)
+	文件看者 := bufio.NewScanner(文件)
+	总 := 0
+	循环 文件看者.Scan() {
+		总++
 	}
-	文件字符串 := 字符串(文件bytes)
-	fmt.Println(文件字符串)
-	
-	返回 len(文件bytes)
+	返回 总
 }
