@@ -6,11 +6,10 @@ import (
 	"log"
 	"os"
 	"bufio"
+	stat "gonum.org/v1/gonum/stat"
 )
 
 func main() {
-	fmt.Println("你好")
-
 	// 平均 / 文件 ping2 jun1 wenjian
 
 	数组 := make([]int, 0)
@@ -19,13 +18,21 @@ func main() {
 	数组 = 遍历目录("./", 数组)
 
 	// 先做这个。。。
-	fmt.Println("Results: ", 数组)
+	fmt.Println("Results shown by File:", 数组)
 
-	// sum #gonum
+	// transform it....
+	float数组 := 新float(数组)
+
+	// sum
+	总 := sum(float数组)
 
 	// average (per file) #gonum
+	平均 := stat.Mean(float数组, nil)
 
 	// print the results
+	fmt.Println("Total Lines:", 总)
+	fmt.Println("Average Lines per File:", 平均)
+
 
 }
 
@@ -69,6 +76,22 @@ func 加起来线一个文件(名字 string) int {
 	总 := 0
 	for 文件看者.Scan() {
 		总++
+	}
+	return 总
+}
+
+func 新float(老 []int) []float64 {
+	新 := make([]float64, len(老))
+	for i := 0; i < len(老); i++ {
+		新[i] = float64(老[i])
+	}
+	return 新
+}
+
+func sum(数组 []float64) float64 {
+	var 总 float64
+	for i := 0; i < len(数组); i++ {
+		总 += 数组[i]
 	}
 	return 总
 }

@@ -8,11 +8,10 @@
 	"log"
 	"os"
 	"bufio"
+	stat "gonum.org/v1/gonum/stat"
 )
 
 程序 主要() {
-	fmt.Println("你好")
-
 	// 平均 / 文件 ping2 jun1 wenjian
 
 	数组 := 做([]整数, 0)
@@ -21,13 +20,21 @@
 	数组 = 遍历目录("./", 数组)
 
 	// 先做这个。。。
-	fmt.Println("Results: ", 数组)
+	fmt.Println("Results shown by File:", 数组)
 
-	// sum #gonum
+	// transform it....
+	浮点数组 := 新浮点(数组)
+
+	// sum
+	总 := sum(浮点数组)
 
 	// average (per file) #gonum
+	平均 := stat.Mean(浮点数组, nil)
 
 	// print the results
+	fmt.Println("Total Lines:", 总)
+	fmt.Println("Average Lines per File:", 平均)
+
 
 }
 
@@ -71,6 +78,22 @@
 	总 := 0
 	循环 文件看者.Scan() {
 		总++
+	}
+	返回 总
+}
+
+程序 新浮点(老 []整数) []浮点64 {
+	新 := 做([]浮点64, len(老))
+	循环 i := 0; i < len(老); i++ {
+		新[i] = 浮点64(老[i])
+	}
+	return 新
+}
+
+程序 sum(数组 []浮点64) 浮点64 {
+	变量 总 浮点64
+	循环 i := 0; i < len(数组); i++ {
+		总 += 数组[i]
 	}
 	返回 总
 }
