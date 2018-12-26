@@ -19,9 +19,6 @@
 	// 加起来每个文件的线
 	数组 = 遍历目录("./", 数组)
 
-	// 先做这个。。。
-	fmt.Println("Results shown by File:", 数组)
-
 	// transform it....
 	浮点数组 := 新浮点(数组)
 
@@ -32,6 +29,7 @@
 	平均 := stat.Mean(浮点数组, nil)
 
 	// print the results
+	fmt.Println("Results shown by File:", 数组)
 	fmt.Println("Total Lines:", 总)
 	fmt.Println("Average Lines per File:", 平均)
 

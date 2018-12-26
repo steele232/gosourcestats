@@ -17,9 +17,6 @@ func main() {
 	// 加起来每个文件的线
 	数组 = 遍历目录("./", 数组)
 
-	// 先做这个。。。
-	fmt.Println("Results shown by File:", 数组)
-
 	// transform it....
 	float数组 := 新float(数组)
 
@@ -30,6 +27,7 @@ func main() {
 	平均 := stat.Mean(float数组, nil)
 
 	// print the results
+	fmt.Println("Results shown by File:", 数组)
 	fmt.Println("Total Lines:", 总)
 	fmt.Println("Average Lines per File:", 平均)
 
