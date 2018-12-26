@@ -21,7 +21,7 @@ func main() {
 	float数组 := 新float(数组)
 
 	// sum
-	总 := sum(float数组)
+	总 := 加起来(float数组)
 
 	// average (per file) #gonum
 	平均 := stat.Mean(float数组, nil)
@@ -86,7 +86,7 @@ func 新float(老 []int) []float64 {
 	return 新
 }
 
-func sum(数组 []float64) float64 {
+func 加起来(数组 []float64) float64 {
 	var 总 float64
 	for i := 0; i < len(数组); i++ {
 		总 += 数组[i]
