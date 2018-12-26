@@ -18,7 +18,7 @@ func main() {
 	数组 = 遍历目录("./", 数组)
 
 	// transform it....
-	float数组 := 新float(数组)
+	float数组 := 新float数组(数组)
 
 	// sum
 	总 := 加起来(float数组)
@@ -30,8 +30,6 @@ func main() {
 	fmt.Println("Results shown by File:", 数组)
 	fmt.Println("Total Lines:", 总)
 	fmt.Println("Average Lines per File:", 平均)
-
-
 }
 
 // 遍历目录，返回
@@ -78,7 +76,7 @@ func 加起来线一个文件(名字 string) int {
 	return 总
 }
 
-func 新float(老 []int) []float64 {
+func 新float数组(老 []int) []float64 {
 	新 := make([]float64, len(老))
 	for i := 0; i < len(老); i++ {
 		新[i] = float64(老[i])
