@@ -32,8 +32,6 @@
 	fmt.Println("Results shown by File:", 数组)
 	fmt.Println("Total Lines:", 总)
 	fmt.Println("Average Lines per File:", 平均)
-
-
 }
 
 // 遍历目录，返回
@@ -65,7 +63,7 @@
 		这个整数 := 加起来线一个文件(目录+名字)
 		数组 = append(数组, 这个整数)
 	}
-	return 数组
+	返回 数组
 }
 
 程序 加起来线一个文件(名字 字符串) 整数 {
