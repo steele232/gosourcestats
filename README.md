@@ -6,6 +6,7 @@ Written entirely in Go (GoLang) and [Simplified Mandarin using ZouYu](https://gi
 ## 路线图 (Roadmap)
 - List out Number of Go files
 - Directory depth command flag/parameter
+- Support 'all' (more) operating systems. Right now, it works on Linux/MacOS because I'm using '/' and not handling other more sophisticated methods of handling directory traversing. 
 
 ## 安装指示 (Installation Instructions)
 - Should be ```go get``` -able ... then install it with ```go install```
