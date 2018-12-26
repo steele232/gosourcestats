@@ -10,20 +10,19 @@ import (
 )
 
 func main() {
-	// 平均 / 文件 ping2 jun1 wenjian
 
 	数组 := make([]int, 0)
 
 	// 加起来每个文件的线
 	数组 = 遍历目录("./", 数组)
 
-	// transform it....
+	// 变换类型
 	float数组 := 新float数组(数组)
 
-	// sum
+	// 加起来总计的线
 	总 := 加起来(float数组)
 
-	// average (per file) #gonum
+	// 平均，使用gonum库
 	平均 := stat.Mean(float数组, nil)
 
 	// print the results
@@ -35,21 +34,21 @@ func main() {
 // 遍历目录，返回
 func 遍历目录(目录 string, 数组 []int) []int {
 
-	// 遍历目录 bianli mulu
+	// 遍历目录
 	文件, 错 := ioutil.ReadDir(目录 + ".")
 	if 错 != nil {
 		log.Fatal(错)
 	}
 
-	// 加载文件 jiazai wenjian
+	// 加载文件
 	for _, f  := range 文件 {
 		名字 := f.Name()
 		if f.IsDir() {
-			数组 = 遍历目录(目录+名字+"/", 数组) //TODO only works on *nix because I'm using "/"
+			数组 = 遍历目录(目录+名字+"/", 数组) //TODO：应该支持所有操作系统
 			continue
 		}
 
-		// skip over any non-".go" files
+		// 跳过都不".go"文件
 		if len(名字) < 3 {
 			continue
 		}
@@ -57,7 +56,7 @@ func 遍历目录(目录 string, 数组 []int) []int {
 			continue
 		}
 
-		// 加起来线 jiaqilai xian4 
+		// 加起来线
 		这个int := 加起来线一个文件(目录+名字)
 		数组 = append(数组, 这个int)
 	}
