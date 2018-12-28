@@ -68,8 +68,13 @@
 程序 加起来线一个文件(名字 字符串) 整数 {
 
 	// 复制了从 https://stackoverflow.com/questions/24562942/golang-how-do-i-determine-the-number-of-lines-in-a-file-efficiently
-	文件, _ := os.Open(名字)
+	文件, 错 := os.Open(名字)
+	如果 错 != nil {
+		log.Fatal(错)
+	}
+	推迟 文件.Close()
 	文件看者 := bufio.NewScanner(文件)
+
 	总 := 0
 	循环 文件看者.Scan() {
 		总++
