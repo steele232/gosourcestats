@@ -38,12 +38,14 @@ func main() {
 
 	// print the results
 	// fmt.Println("Results shown by File:", 数组)
-	fmt.Println("Total Number of Files:", len(数组))
-	fmt.Println("Total Lines:", 总)
-	fmt.Println("Mean Lines per File:", 平均)
-	fmt.Println("Median Lines per File:", 中位数)
-	fmt.Println("Largest Go File:", 最大, "lines")
-	fmt.Println("Smallest Go File:", 最小, "lines")
+	fmt.Println("**********************")
+	fmt.Println("* Total Number of Files:", len(数组))
+	fmt.Println("* Total Lines:", 总)
+	fmt.Println("* Mean Lines per File:", 平均)
+	fmt.Println("* Median Lines per File:", 中位数)
+	fmt.Println("* Largest Go File:", 最大, "lines")
+	fmt.Println("* Smallest Go File:", 最小, "lines")
+	fmt.Println("**********************")
 }
 
 // 遍历目录，返回
