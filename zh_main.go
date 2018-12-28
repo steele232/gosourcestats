@@ -8,6 +8,7 @@
 	"log"
 	"os"
 	"bufio"
+	"sort"
 	stat "gonum.org/v1/gonum/stat"
 )
 
@@ -27,10 +28,24 @@
 	// 平均，使用gonum库
 	平均 := stat.Mean(浮点数组, nil)
 
+	// 中位数, 使用gonum库
+	sort.Float64s(浮点数组)
+	中位数 := stat.Quantile(0.5, stat.Empirical, 浮点数组, nil)
+
+	//
+	最大 := 找到最大(浮点数组)
+
+	//
+	最小 := 找到最小(浮点数组, 最大)
+
 	// print the results
-	fmt.Println("Results shown by File:", 数组)
+	// fmt.Println("Results shown by File:", 数组)
+	fmt.Println("Total Number of Files:", len(数组))
 	fmt.Println("Total Lines:", 总)
-	fmt.Println("Average Lines per File:", 平均)
+	fmt.Println("Mean Lines per File:", 平均)
+	fmt.Println("Median Lines per File:", 中位数)
+	fmt.Println("Largest Go File:", 最大, "lines")
+	fmt.Println("Smallest Go File:", 最小, "lines")
 }
 
 // 遍历目录，返回
@@ -96,4 +111,24 @@
 		总 += 数组[i]
 	}
 	返回 总
+}
+
+程序 找到最大(数组 []浮点64) 浮点64 {
+	变量 最大 浮点64 // 开始在0
+	循环 i := 0; i < len(数组); i++ {
+		如果 数组[i] > 最大 {
+			最大 = 数组[i]
+		}
+	}
+	返回 最大
+}
+
+程序 找到最小(数组 []浮点64, 最大 浮点64) 浮点64 {
+	最小 := 最大
+	循环 i := 0; i < len(数组); i++ {
+		如果 数组[i] < 最小 {
+			最小 = 数组[i]
+		}
+	}
+	返回 最小
 }
