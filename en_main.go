@@ -18,23 +18,23 @@ func main() {
 	数组 = 遍历目录("./", 数组)
 
 	// 变换类型
-	float数组 := 新float数组(数组)
+	float组 := 新float组(数组)
 
 	// 加起来总计的线
-	总 := 加起来(float数组)
+	总 := 加起来(float组)
 
 	// 平均，使用gonum库
-	平均 := stat.Mean(float数组, nil)
+	平均 := stat.Mean(float组, nil)
 
 	// 中位数, 使用gonum库
-	sort.Float64s(float数组)
-	中位数 := stat.Quantile(0.5, stat.Empirical, float数组, nil)
+	sort.Float64s(float组)
+	中位数 := stat.Quantile(0.5, stat.Empirical, float组, nil)
 
 	//
-	最大 := 找到最大(float数组)
+	最大 := 找到最大(float组)
 
 	//
-	最小 := 找到最小(float数组, 最大)
+	最小 := 找到最小(float组, 最大)
 
 	// print the results
 	// fmt.Println("Results shown by File:", 数组)
@@ -97,7 +97,7 @@ func 加起来线一个文件(名字 string) int {
 	return 总
 }
 
-func 新float数组(老 []int) []float64 {
+func 新float组(老 []int) []float64 {
 	新 := make([]float64, len(老))
 	for i := 0; i < len(老); i++ {
 		新[i] = float64(老[i])
