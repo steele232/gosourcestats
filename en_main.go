@@ -114,7 +114,7 @@ func 加起来(数组 []float64) float64 {
 }
 
 func 找到最大(数组 []float64) float64 {
-	var 最大 float64 // 开始在0
+	var 最大 float64 // 从0开始
 	for i := 0; i < len(数组); i++ {
 		if 数组[i] > 最大 {
 			最大 = 数组[i]
